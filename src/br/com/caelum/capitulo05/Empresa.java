@@ -6,25 +6,26 @@ public class Empresa {
 	String cnpj;
 	
 	void adiciona(Funcionario f) {
-		//boolean arrayCheio = true;
+		boolean arrayCheio = true;
 		for (int i = 0; i < empregados.length; i++) {
 			if (empregados[i] == null) {
 				empregados[i] = f;
-				//arrayCheio = false;
+				arrayCheio = false;
 				break;
 			} if (empregados[empregados.length - 1] != null) {
-				System.out.println("Todas as vagas já foram preenchidas!\nPrecisará de realocação");
-//				Funcionario[] arrayMaior = new Funcionario[this.empregados.length + 1];
-//				for (int j = 0; j < arrayMaior.length; j++) {
-//					arrayMaior[this.empregados.length] = f;
-//					empregados = arrayMaior;
-//				}
-				
+				System.out.println("Todas as vagas já foram preenchidas!");				
 				break;
 			}
 		}
-		
-	
+		if (arrayCheio) {
+			System.out.println("Realocando novo funcionário: " + f.nome);
+			Funcionario[] arrayMaior = new Funcionario[this.empregados.length + 1];
+			for (int i = 0; i < this.empregados.length; i++) {
+				arrayMaior[i] = empregados[i];
+			}
+			arrayMaior[this.empregados.length] = f;
+			empregados = arrayMaior;
+		}
 	}
 	
 	void mostraEmpregados() {

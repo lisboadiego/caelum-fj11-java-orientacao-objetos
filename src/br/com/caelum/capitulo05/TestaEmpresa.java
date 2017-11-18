@@ -54,12 +54,12 @@ public class TestaEmpresa {
 				
 		empresa.contem(f1);
 		
-		empresa.contem(f2);
+		empresa.contem(f3);
 		
 		empresa.adiciona(f3);
 		
 		
-		//empresa.mostraEmpregados();
+		empresa.mostraEmpregados();
 	}
 
 }
